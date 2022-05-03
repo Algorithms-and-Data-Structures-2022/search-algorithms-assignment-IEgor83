@@ -12,10 +12,10 @@ namespace assignment {
       return mid;
     }
     else if (data[mid] < search_element){
-      a = mid+1;
+      a = mid + 1;
     }
     else{
-      b = mid-1;
+      b = mid - 1;
     }
   }
 

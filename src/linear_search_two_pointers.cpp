@@ -5,7 +5,7 @@ namespace assignment {
   std::optional<int> LinearSearchTwoPointers::Search(const std::vector<int>& data, int search_element) const {
     int a = 0;
     int b = static_cast<int>(data.size()) - 1;
-    while (a < b){
+    while (a <= b){
       if(data[a] == search_element){
         return a;
       }
