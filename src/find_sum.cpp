@@ -5,7 +5,7 @@ namespace assignment {
   std::optional<std::pair<int, int>> find_sum(const std::vector<int>& data, int sum) {
 
     int a = 0;
-    int b = data.size()-1;
+    int b = static_cast<int>(data.size()) - 1;
     while (a < b){
       if (data[a] + data[b] == sum ) {
         return std::make_pair(a, b);

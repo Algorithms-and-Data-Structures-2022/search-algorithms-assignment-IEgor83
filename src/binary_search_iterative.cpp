@@ -4,9 +4,9 @@ namespace assignment {
 
   std::optional<int> BinarySearchIterative::Search(const std::vector<int>& data, int search_element) const {
   int a = 0;
-  int b = data.size()-1;
+  int b = static_cast<int>(data.size()) - 1;
   int mid;
-  while (a < b){
+  while (a <= b){
     mid = (a+b) / 2;
     if (data[mid] == search_element ) {
       return mid;
@@ -18,9 +18,7 @@ namespace assignment {
       b = mid-1;
     }
   }
-  if (data[a] == search_element){
-    return a;
-  }
+
     // Tips:
     // 1. Заведите две переменные: (а) индекс левой границы и (б) индекс правой границы.
     // 2. Поиск ведется пока индекс левой границы не превысил индекс правой.
