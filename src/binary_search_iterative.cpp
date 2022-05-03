@@ -3,7 +3,24 @@
 namespace assignment {
 
   std::optional<int> BinarySearchIterative::Search(const std::vector<int>& data, int search_element) const {
-
+  int a = 0;
+  int b = data.size()-1;
+  int mid;
+  while (a < b){
+    mid = (a+b) / 2;
+    if (data[mid] == search_element ) {
+      return mid;
+    }
+    else if (data[mid] < search_element){
+      a = mid+1;
+    }
+    else{
+      b = mid-1;
+    }
+  }
+  if (data[a] == search_element){
+    return a;
+  }
     // Tips:
     // 1. Заведите две переменные: (а) индекс левой границы и (б) индекс правой границы.
     // 2. Поиск ведется пока индекс левой границы не превысил индекс правой.
@@ -13,7 +30,7 @@ namespace assignment {
     //    2) Целевой элемент меньше элемента посередине (область поиска сокращается).
     //    3) Целевой элемент больше элемента посередине (область поиска сокращается).
 
-    return std::nullopt;
+  return std::nullopt;
   }
 
 }  // namespace assignment
